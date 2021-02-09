@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- <meta charset='utf-8'> -->
+  <meta charset='utf-8'>
   <title>Paskaita 2</title>
-  <link rel='stylesheet' type='text/css' href='main.css'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='main.css'>
 </head>
 
 <body>
@@ -15,6 +14,10 @@
       border: solid red 2px;
       direction: rtl;
     }
+
+    /* html {
+      background-color: aqua;
+    } */
 
     form {
       display: flex;
@@ -26,7 +29,10 @@
   <div tabindex="2">Paskaita div elementas 3</div>
   <div tabindex="1" title="test" class="klase" style="background: green;">Paskaita div elementas 4</div> -->
 
-  <form title="Registration table">
+  <noscript>
+    Reikia js kad veiktu
+  </noscript>
+  <!-- <form title="Registration table">
     <div>
       <label>
         First name 😀 😃 😄
@@ -47,10 +53,91 @@
         <input name="custom-time" tabindex="2">
       </label>
     </div>
+  </form> -->
+  <style>
+    table,
+    th,
+    td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+  </style>
+  <table>
+    <caption>Lentele</caption>
+    <thead>
+      <tr>
+        <th colspan="2">1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>3</td>
+        <td colspan="2">4</td>
+        <td rowspan="2">5</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>3</td>
+        <td colspan="2">4</td>
+      </tr>
+    </tbody>
+  </table>
+  <style>
+    textarea:disabled {
+      color: red;
+    }
+
+    /* textarea {
+      resize: none;
+    }
+    */
+    select {
+      /* -webkit-appearance: none;
+      appearance: none; */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      object-fit: cover;
+      width: 500px;
+      height: 250px;
+      border: solid;
+    }
+  </style>
+  <form>
+    <label>
+      Textarea 1
+      <textarea name="textarea-1">Test text</textarea>
+    </label>
+    <fieldset>
+      <legend>Tetst</legend>
+      <label for="textarea-2">Textarea 2</label>
+      <textarea name="textarea-2">Test text</textarea>
+      <button name="get-char-count" type="submit">Count</button>
+      <span id="result"></span>
+    </fieldset>
+
   </form>
-  <div lang="">
-    asd
-  </div>
+  <img
+    src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/is_my_cat_normal_slideshow/1800x1200_is_my_cat_normal_slideshow.jpg"
+    alt="cat-image">
+  <video width="320" height="240" controls>
+    <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+  </video>
+  <!-- <script>
+    document.querySelector('[name=get-char-count]').onclick = function () {
+      document.getElementById('result').innerHTML =
+        document.querySelector('[name=textarea-2]').value.length
+    }
+  </script> -->
 </body>
 
 </html>
