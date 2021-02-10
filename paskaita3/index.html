@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Paskaita 3</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+  <style>
+    a.test {
+      color: red;
+    }
+
+    a {
+      position: relative;
+    }
+
+    a:hover::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: red;
+      opacity: 0.5;
+      content: ' ';
+    }
+
+    div:focus {
+      background-color: green;
+    }
+
+    a:hover {
+      background-color: antiquewhite;
+    }
+  </style>
+  <div>
+    <a class="test" href="#">Link</a>
+    <div>
+      <div>
+        <span class="test">
+          <a href="#"><span class="test">Link 2</span></a>
+        </span>
+      </div>
+    </div>
+    <div tabindex="1">
+      Div
+    </div>
+  </div>
+</body>
+
+</html>
