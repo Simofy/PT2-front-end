@@ -20,6 +20,26 @@
       vertical-align: top;
       text-align: center;
       position: relative;
+
+    }
+
+    tr {
+      height: 30px;
+      transition: height 200ms linear;
+    }
+
+    tr:hover {
+      height: 100px;
+    }
+
+    tr:hover th::after,
+    tr:hover td::after {
+      content: "0";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      left: 0;
     }
   </style>
   <table class="test">

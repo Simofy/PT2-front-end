@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Task 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <style>
+    .parent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 40vh;
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 30px;
+      background-color: aqua;
+      color: blue;
+    }
+
+    .options {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background-color: blanchedalmond;
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      height: 100px;
+      overflow-y: auto;
+    }
+
+    .parent:hover .options {
+      height: 100px;
+    }
+
+    .options span:hover {
+      background-color: red;
+    }
+  </style>
+  <div class="parent">
+    <span class="title">Pasirinkimas</span>
+    <div class="options">
+      <span>Option 1</span>
+      <span>Option 2</span>
+      <span>Option 3</span>
+      <span>Option 4</span>
+      <span>Option 5</span>
+      <span>Option 6</span>
+      <span>Option 7</span>
+      <span>Option </span>
+      <span>Option </span>
+      <span>Option </span>
+      <span>Option </span>
+    </div>
+  </div>
+</body>
+
+</html>

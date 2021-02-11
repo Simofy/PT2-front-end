@@ -1,0 +1,69 @@
+.container-1 div ul li {
+  color: black;
+}
+
+.container-1 div div ul li {
+  color: red;
+}
+
+.container-1 div div div ul li {
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-2 .list ul ul ul li:last-child {
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-3 .list ul li:hover {
+  background-color: blanchedalmond;
+}
+
+.container-3 .list ul ul li:hover {
+  background-color: aquamarine;
+}
+
+.container-3 .list ul ul ul li:hover {
+  background-color: rebeccapurple;
+}

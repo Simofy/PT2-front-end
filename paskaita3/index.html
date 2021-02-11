@@ -6,9 +6,6 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Paskaita 3</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-</head>
-
-<body>
   <style>
     a.test {
       color: red;
@@ -36,19 +33,123 @@
     a:hover {
       background-color: antiquewhite;
     }
+
+    body {
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+    }
+
+    .custom {
+      width: 200px;
+      height: 200px;
+      background-color: darkkhaki;
+      border: 2px solid black;
+      transition: background-color 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+      /* position: relative; */
+      /* border-width: 2px;
+      border-style: solid;
+      border-color: black; */
+    }
+
+    .custom:hover {
+      background-color: aqua;
+    }
+
+    .absolute {
+      width: 50px;
+      height: 50px;
+      background-color: darkblue;
+      position: sticky;
+      top: 50px;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 400vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section {
+      height: 100vh;
+      background-color: aqua;
+      margin: 4px 0;
+      width: 100%;
+    }
+
+    .section:first-child {
+      margin-top: 0;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 48px;
+    }
+
+    .sticky .container {
+      position: relative;
+      height: 100%;
+    }
+
+    .sticky .description {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sticky .heading {
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: bisque;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      transition: transform 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    .sticky:hover .heading {
+      transform: scale(0.4) translate(0, 50px);
+    }
   </style>
-  <div>
-    <a class="test" href="#">Link</a>
-    <div>
-      <div>
-        <span class="test">
-          <a href="#"><span class="test">Link 2</span></a>
-        </span>
+</head>
+
+<body>
+  <div class="section">
+    <div class="sticky">
+      <div class="container">
+        <div class="description">ALIO VALIO IR INTERNETAS</div>
+        <div class="heading">Section 1</div>
       </div>
     </div>
-    <div tabindex="1">
-      Div
+  </div>
+  <div class="section">
+    <div class="sticky">
+      <div class="container">
+        <div class="description">ALIO VALIO IR INTERNETAS</div>
+        <div class="heading">Section 2</div>
+      </div>
     </div>
+
+  </div>
+  <div class="section">
+    <div class="sticky">
+      <div class="container">
+        <div class="description">ALIO VALIO IR INTERNETAS</div>
+        <div class="heading">Section 3</div>
+      </div>
+    </div>
+
   </div>
 </body>
 
