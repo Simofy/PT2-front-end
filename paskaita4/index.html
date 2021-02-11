@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Paskaita 4</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+  <style>
+    /* div {
+      background-color: antiquewhite;
+    } */
+    html {
+      font-size: 16px;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .klase1>.klase2 {
+      background-color: red;
+    }
+
+    .klase1+.klase3 {
+      background-color: blueviolet;
+    }
+
+    .klase1~.klase4 {
+      background-color: blue;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    [href]:not(.klase-not) {
+      color: red;
+    }
+
+    a[href="https://google.com"] {
+      color: green;
+    }
+
+    [data-test*="google"] {
+      color: red;
+    }
+
+    .container-2 {
+      width: 100vh;
+      height: 800px;
+      font-size: 12px;
+      background-color: cadetblue;
+    }
+
+    .custom {
+      width: 50vw;
+      height: 20em;
+      background-color: aqua;
+    }
+  </style>
+  <div class="container">
+    <a class="klase-not" href="https:// google.com">Google</a>
+    <a href="https://google.lt">Google</a>
+    <a class="klase-not" href="https://google.uk">Google</a>
+    <a href="https://google.co">Google</a>
+  </div>
+  <input>
+  <script>
+    const input = document.querySelector('input');
+    document.querySelector('input').onchange = function (e) {
+      const value = e.target.value;
+      input.setAttribute('data-test', value);
+      input.toggleAttribute('')
+    }
+  </script>
+  <div class="klase4">Text</div>
+  <div class="klase4">Text</div>
+  <div class="klase4">Text</div>
+  <div class="klase1">
+    Text 1
+    <div class="klase2">
+      <div class="klase2">
+        Text 2
+      </div>
+      Text 2
+    </div>
+  </div>
+  <div class="klase3">Text</div>
+  <div class="klase3">Text</div>
+  <div class="klase3">Text</div>
+  <div class="klase3">Text</div>
+  <div class="container-2">
+    <div class="custom"></div>
+  </div>
+</body>
+
+</html>
