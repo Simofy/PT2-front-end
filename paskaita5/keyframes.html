@@ -69,8 +69,8 @@
     }
 
     .message {
-      width: calc(100% - 4px);
-      height: 24px;
+      width: calc(100% - 12px);
+      min-height: 24px;
       background-color: rgba(138, 43, 226, 0.5);
       border: solid 2px #333;
       border-top-width: 1px;
@@ -78,6 +78,10 @@
       animation: messageAppear 600ms linear 0s 1 forwards;
       animation-timing-function: cubic-bezier(.7, .71, .5, .9);
       transition: background-color 200ms linear;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4px;
     }
 
     .message:hover {
@@ -96,29 +100,80 @@
 
 <body>
   <div class="container">
-    <div class="message">Test</div>
   </div>
   <form>
-    <input name="message" type="text">
+    <label>
+      Name
+      <input name="userName" type="text">
+    </label>
+    <label>
+      Message
+      <input name="message" type="text">
+    </label>
     <button type="submit">Submit</button>
   </form>
   <script>
     const container = document.querySelector('.container');
+    const messagesList = [];
+    function addMessage(message, name) {
+      const div = document.createElement('div');
+      const nameSpan = document.createElement('span');
+      const messageSpan = document.createElement('span');
+      nameSpan.innerHTML = name + ':';
+      messageSpan.innerHTML = message;
+      div.className = 'message';
+      div.appendChild(nameSpan);
+      div.appendChild(messageSpan);
+      container.appendChild(div);
+    }
+    function getMessages() {
+      fetch('https://simutis.dev/api/messages', {
+        method: 'GET'
+      })
+        .then((res) => res.json())
+        .then((messages) => {
+          updateMessages(messages);
+        }).catch(() => { });
+    }
+    function updateMessages(messages) {
+      for (let i = 0; i < messages.length; i += 1) {
+        const {
+          _id,
+          message,
+          name
+        } = messages[i];
+        if (!messagesList.includes(_id)) {
+          messagesList.push(_id);
+          addMessage(message, name);
+        }
+      }
+      setTimeout(getMessages, 20);
+    }
+    getMessages();
     document.querySelector('form').onsubmit = function (e) {
       e.preventDefault();
       const {
         target: {
-          message
+          message,
+          userName: {
+            value: userName
+          }
         }
       } = e;
       const {
         value: messageValue
       } = message;
       message.value = '';
-      const div = document.createElement('div');
-      div.className = 'message';
-      div.innerHTML = messageValue;
-      container.appendChild(div);
+      fetch('https://simutis.dev/api/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: messageValue,
+          name: userName
+        }),
+      })
     }
   </script>
 </body>
