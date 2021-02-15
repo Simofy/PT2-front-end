@@ -26,7 +26,14 @@
       width: 200px;
       height: 200px;
       position: relative;
-      transition: all 2s cubic-bezier(.17, .67, 0, 1.98);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 45px;
+      border: solid red 2px;
+      color: #eee;
+      transition: color 2s cubic-bezier(.17, .67, 0, 1.98),
+        transform 2s cubic-bezier(.17, .67, 0, 1.98);
     }
 
     .container>div {
@@ -35,10 +42,13 @@
       transition: all 2s cubic-bezier(.17, .67, 0, 1.48);
       transform: translate(0, 0);
       pointer-events: none;
+      z-index: -1;
     }
 
     .container:hover {
       transform: scale(2);
+      color: #faf;
+      width: 300px;
     }
 
     /* 
@@ -91,6 +101,7 @@
 
 <body>
   <div class="container">
+    Test
     <div class="top-left"></div>
     <div class="top-right"></div>
     <div class="bottom-right"></div>
