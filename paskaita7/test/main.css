@@ -1,0 +1,118 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100%;
+}
+.left-sidebar {
+  width: 10rem;
+  height: 100%;
+  background-color: lightskyblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all linear 400ms;
+}
+.left-sidebar-mobile {
+  display: none;
+  background-color: lightskyblue;
+  align-items: center;
+  justify-content: center;
+  transition: all linear 2s;
+}
+.content {
+  flex: 1;
+  background-color: azure;
+}
+.right-sidebar {
+  max-width: 10rem;
+  flex: 1;
+  background: olivedrab;
+  display: flex;
+  transition: all linear 400ms;
+}
+.usr-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: baseline;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 107, 47, 0.2);
+}
+.usr-object {
+  width: 100%;
+  height: 70px;
+  background-color: rgba(211, 211, 211, 0.6);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.usr-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: white;
+  margin-left: 10px;
+}
+.usr-rectangle {
+  width: 120px;
+  height: 15px;
+  border-radius: 24px;
+  background-color: white;
+  margin-left: 10px;
+}
+
+@media (max-width: 1500px) {
+  .right-sidebar {
+    max-width: 3.5rem;
+  }
+  .usr-rectangle {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .right-sidebar {
+    display: none;
+  }
+  .left-sidebar {
+    position: absolute;
+  }
+}
+
+@media (max-width: 1100px) {
+  /* .left-sidebar {
+    height: 50%;
+  } */
+}
+@media (max-width: 1000px) {
+  /* .left-sidebar {
+    display: none;
+  } */
+  /* .left-sidebar-mobile {
+    display: flex;
+    width: 15rem;
+    height: 40%;
+  } */
+}
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-sidebar {
+    width: 100%;
+    height: 70px;
+    max-width: unset;
+    flex: unset;
+  }
+}
