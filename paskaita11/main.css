@@ -23,6 +23,10 @@ body {
   flex-wrap: wrap;
 }
 
+/* .container > div {
+  border: solid #faf 2px;
+} */
+
 .row {
   display: flex;
   justify-content: center;

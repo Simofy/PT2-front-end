@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>table append</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid #FFC107;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      font-family: calibri;
+    }
+
+    td {
+      background: #392c6e;
+      color: white;
+    }
+
+    th {
+      text-transform: uppercase;
+      background: #e6ae30;
+    }
+
+    th:nth-child(odd) {
+      background: #FFC107;
+    }
+
+    .input-wrapper {
+      width: 550px;
+      margin: 2rem 0;
+    }
+
+    .input {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="input-wrapper">
+    <div class="input">
+      Vardas<br>
+      <input type="text" id="vardas">
+    </div>
+    <div class="input">
+      Pavardė<br>
+      <input type="text" id="pavarde">
+    </div>
+    <div class="input">
+      Amžius<br>
+      <input type="number" id="amzius">
+    </div>
+    <div class="input">
+      Index to add before<br>
+      <input type="number" id="index-to-add">
+    </div>
+
+    <div class="input">
+      <button id="prideti">Pridėti</button>
+    </div>
+  </div>
+
+  <table style="width:550px">
+    <thead>
+      <tr>
+        <th>Vardas</th>
+        <th>Pavardė</th>
+        <th>Amžius</th>
+      </tr>
+    </thead>
+    <tbody id="table">
+
+      <tr>
+        <td>Jonas</td>
+        <td>Rimkus</td>
+        <td>54</td>
+      </tr>
+      <tr>
+        <td>Vestina</td>
+        <td>Petronytė</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td>Marius</td>
+        <td>Dulinskas</td>
+        <td>23</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const vardas = document.getElementById('vardas');
+    const pavarde = document.getElementById('pavarde');
+    const amzius = document.getElementById('amzius');
+    const btn = document.getElementById('prideti');
+    const table = document.getElementById('table');
+
+    const indexToAdd = document.getElementById('index-to-add');
+
+
+    btn.addEventListener('click', function () {
+      if (vardas.value && pavarde.value && amzius.value) {
+        const el = document.createElement('tr');
+        el.innerHTML = "<td>" + vardas.value + "</td><td>" + pavarde.value + "</td><td>" + amzius.value + "</td>";
+
+        const index = indexToAdd.value;
+
+        if (index >= 0 && index < table.children.length) {
+          table.insertBefore(el, table.children[index]);
+        } else {
+          table.appendChild(el);
+        }
+        vardas.value = "";
+        pavarde.value = "";
+        amzius.value = "";
+      }
+      else {
+        alert('iveskite duomenis');
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>

@@ -43,15 +43,31 @@ function cellOnClick() {
   addElement(lastChild, fontSize < 4 ? 4 : fontSize, depth);
 }
 
-window.onload = function () {
+// function generateElement(ref) {
 
-  const tableWidth = 3;
-  const tableHeight = 2;
+// }
+
+window.addEventListener('load', function () {
+
+  const tableWidth = 1;
+  const tableHeight = 1;
   // <div class="row">
   //   <div class="cell" style="font-size: 48px;"></div>
   //   <div class="cell" style="font-size: 48px;"></div>
   // </div>
   const container = document.querySelector('.container');
+  const refElement = document.querySelector('#ref-element');
+
+  // document.querySelector('#add-before').addEventListener('click', function () {
+  //   const newDiv = document.createElement('div');
+  //   newDiv.className = 'test';
+  //   container.insertBefore(newDiv, refElement);
+  // });
+  // document.querySelector('#add-after').addEventListener('click', function () {
+  //   const newDiv = document.createElement('div');
+  //   newDiv.className = 'test';
+  //   container.appendChild(newDiv);
+  // });
 
   for (let i = 0; i < tableHeight; i += 1) {
     const rowElement = document.createElement('div');
@@ -60,9 +76,11 @@ window.onload = function () {
       const cellElement = document.createElement('div');
       cellElement.className = 'cell';
       cellElement.style.fontSize = '48px';
-      cellElement.onclick = cellOnClick.bind(cellElement);
+      cellElement.addEventListener('click', cellOnClick.bind(cellElement))
+
       rowElement.appendChild(cellElement);
     }
     container.appendChild(rowElement);
   }
-}
+
+});
