@@ -1,0 +1,36 @@
+table,
+td {
+  border: solid black 2px;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+td,
+th {
+  padding: 4px;
+}
+
+.is-vegan-icon {
+  text-align: center;
+}
+
+i {
+  pointer-events: none;
+}
+
+.add-to-basket,
+.remove-from-basket {
+  text-align: center;
+}
+
+.add-to-basket > button,
+.remove-from-basket > button {
+  border: none;
+  background: none;
+}
+
+.item-basket {
+}
