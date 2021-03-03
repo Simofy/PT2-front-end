@@ -1,0 +1,11 @@
+.header {
+  border-color: black;
+}
+
+.container > div:first-child {
+  background-color: #faf !important;
+}
+
+.container > div:last-child {
+  background-color: #afa !important;
+}

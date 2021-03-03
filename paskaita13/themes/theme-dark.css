@@ -1,0 +1,13 @@
+.header {
+  color: snow;
+  background-color: #333;
+  border-color: snow;
+}
+
+.container > div:first-child {
+  background-color: #660 !important;
+}
+
+.container > div:last-child {
+  background-color: #066 !important;
+}
