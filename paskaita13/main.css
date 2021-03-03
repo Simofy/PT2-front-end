@@ -25,8 +25,34 @@ body {
 
 .container > div:first-child {
   background-color: #faf;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > div:first-child > input {
+  flex: 0;
 }
 
 .container > div:last-child {
   background-color: #afa;
+}
+
+@keyframes test {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.test-anim {
+  animation: test 100 linear 200ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
