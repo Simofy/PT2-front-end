@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Solution</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='main.js'></script>
+  <style>
+    @keyframes show-anim {
+      0% {
+        opacity: 1;
+      }
+
+      99% {
+        opacity: 0;
+
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .show-saved {
+      animation: show-anim 200ms linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      animation-delay: 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <input name="pvz-1">
+    <input name="pvz-2">
+    <input name="pvz-3">
+    <input name="pvz-4">
+    <input name="pvz-5">
+    <button type="submit">Save</button>
+    <span style="opacity: 0;">Saved!</span>
+    <div>
+      <input name="list-text">
+      <button type="button" name="add-to-list">Add to list</button>
+      <div class="list-container">
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
