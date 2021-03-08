@@ -3,50 +3,43 @@ import logo from './logo.svg';
 import './App.css';
 import BoxContainer from './BoxContainer';
 
+class ButtonInc extends React.Component {
+  render() {
+    return <button onClick={this.props.onClick}>Increment</button>
+  }
+}
+
+class ButtonDec extends React.Component {
+  render() {
+    return <button onClick={this.props.onClick}>Decrement</button>
+  }
+}
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       number: 0,
-      numberTest: 1,
-      update: 1,
     };
-    this.handleClick = this.handleClick.bind(this);
-    this.handleClickTest = this.handleClickTest.bind(this);
   }
-  handleClick() {
-    console.log(this.state.number);
-    this.setState({
-      number: this.state.number + 1,
-    });
-  }
-  handleClickTest() {
-    console.log(this.state.numberTest)
-    this.setState({
-      numberTest:this.state.numberTest * 2,
-    });
+  incrementHandler() {
+    
   }
   render() {
-    const test = "100";
+    const {
+      number,
+    } = this.state;
     return (
-      <div className="App" title={test}>
-        <header className="App-header">
-          <button onClick={this.handleClick}>
-            <img
-              src={logo}
-              className="App-logo"
-              alt="logo"
-            />
-          </button>
-          <button onClick={this.handleClickTest}>
-            Test
-          </button>
-          <p>
-            <BoxContainer 
-            numberTest={this.state.numberTest}
-            number={this.state.number}/>
-          </p>
-        </header>
+      <div className="app">
+        <div className="container">
+          <ButtonInc onClick={() => this.setState({
+            number: number + 1
+          })}/>
+          <ButtonDec onClick={() => this.setState({
+            number: number - 1
+          })}/>
+          <span>{number}</span>
+        </div>
       </div>
     );
   }
