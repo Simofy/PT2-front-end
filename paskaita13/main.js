@@ -28,7 +28,7 @@ clearTimeout(timeoutId);
 
 
 async function applyTheme(theme) {
-  const response = await fetch(`/paskaita13/themes/${theme}.css`);
+  const response = await fetch(`themes/${theme}.css`);
   const cssFile = await response.text();
   const styleBlock = document.querySelector('[data-style]');
   styleBlock.innerHTML = '';
